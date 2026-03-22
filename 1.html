@@ -84,6 +84,18 @@
             animation-delay: 1.5s;
         }
         
+        /* 气球绳子 */
+        .balloon::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: rgba(0,0,0,0.2);
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
         @keyframes float {
             0% {
                 transform: translateY(0) rotate(0deg);
@@ -93,6 +105,57 @@
             }
             100% {
                 transform: translateY(0) rotate(0deg);
+            }
+        }
+        
+        /* 星星装饰 */
+        .star {
+            position: absolute;
+            background: #fff;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: twinkle 3s ease-in-out infinite;
+        }
+        
+        .star1 {
+            width: 20px;
+            height: 20px;
+            top: 10%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+        
+        .star2 {
+            width: 15px;
+            height: 15px;
+            top: 15%;
+            left: 85%;
+            animation-delay: 1s;
+        }
+        
+        .star3 {
+            width: 18px;
+            height: 18px;
+            top: 25%;
+            left: 65%;
+            animation-delay: 0.5s;
+        }
+        
+        .star4 {
+            width: 12px;
+            height: 12px;
+            top: 35%;
+            left: 25%;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
             }
         }
         
@@ -141,6 +204,26 @@
             }
         }
         
+        /* 个性化名称 */
+        .name-display {
+            font-size: 1.5em;
+            color: #45b7d1;
+            margin-bottom: 20px;
+            font-weight: bold;
+            animation: slideIn 1s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
         /* 祝福内容 */
         .wish-content {
             color: #555;
@@ -161,12 +244,23 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+            margin: 10px;
         }
         
         .btn:hover {
             background: linear-gradient(45deg, #ee5a52, #ff6b6b);
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(45deg, #45b7d1, #3498db);
+            box-shadow: 0 5px 15px rgba(69, 183, 209, 0.4);
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(45deg, #3498db, #45b7d1);
+            box-shadow: 0 8px 20px rgba(69, 183, 209, 0.6);
         }
         
         /* 蛋糕效果 */
@@ -204,6 +298,43 @@
             position: absolute;
             bottom: 110px;
             left: 20px;
+        }
+        
+        /* 蛋糕装饰 */
+        .cake-decoration {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff6b6b;
+            border-radius: 50%;
+        }
+        
+        .cake-decoration1 {
+            top: 120px;
+            left: 30px;
+        }
+        
+        .cake-decoration2 {
+            top: 120px;
+            left: 50px;
+            background: #4ecdc4;
+        }
+        
+        .cake-decoration3 {
+            top: 120px;
+            left: 70px;
+            background: #ffeaa7;
+        }
+        
+        .cake-decoration4 {
+            top: 120px;
+            left: 90px;
+            background: #45b7d1;
+        }
+        
+        .cake-decoration5 {
+            top: 120px;
+            left: 110px;
         }
         
         .candle {
@@ -248,6 +379,10 @@
                 font-size: 2em;
             }
             
+            .name-display {
+                font-size: 1.3em;
+            }
+            
             .wish-content {
                 font-size: 1.1em;
             }
@@ -279,6 +414,36 @@
             .candle {
                 left: 55px;
             }
+            
+            .cake-decoration {
+                width: 8px;
+                height: 8px;
+            }
+            
+            .cake-decoration1 {
+                top: 95px;
+                left: 25px;
+            }
+            
+            .cake-decoration2 {
+                top: 95px;
+                left: 40px;
+            }
+            
+            .cake-decoration3 {
+                top: 95px;
+                left: 55px;
+            }
+            
+            .cake-decoration4 {
+                top: 95px;
+                left: 70px;
+            }
+            
+            .cake-decoration5 {
+                top: 95px;
+                left: 85px;
+            }
         }
         
         /* 惊喜效果 */
@@ -305,6 +470,25 @@
         
         .surprise-content {
             text-align: center;
+            animation: bounceIn 0.5s ease-out;
+        }
+        
+        @keyframes bounceIn {
+            from {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
         
         .surprise h2 {
@@ -332,9 +516,48 @@
                 opacity: 0;
             }
         }
+        
+        /* 加载动画 */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: all 0.5s ease;
+        }
+        
+        .loading.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #ff6b6b;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
+    <!-- 加载动画 -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+    
     <!-- 背景装饰 -->
     <div class="bg-decoration">
         <div class="balloon balloon1"></div>
@@ -342,16 +565,26 @@
         <div class="balloon balloon3"></div>
         <div class="balloon balloon4"></div>
         <div class="balloon balloon5"></div>
+        <div class="star star1"></div>
+        <div class="star star2"></div>
+        <div class="star star3"></div>
+        <div class="star star4"></div>
     </div>
     
     <!-- 主卡片 -->
     <div class="birthday-card">
         <h1>🎉 生日快乐！</h1>
+        <div class="name-display" id="nameDisplay">亲爱的朋友</div>
         
         <div class="cake">
             <div class="cake-bottom"></div>
             <div class="cake-middle"></div>
             <div class="cake-top"></div>
+            <div class="cake-decoration cake-decoration1"></div>
+            <div class="cake-decoration cake-decoration2"></div>
+            <div class="cake-decoration cake-decoration3"></div>
+            <div class="cake-decoration cake-decoration4"></div>
+            <div class="cake-decoration cake-decoration5"></div>
             <div class="candle">
                 <div class="flame"></div>
             </div>
@@ -364,7 +597,10 @@
             <p>健康、幸福、万事如意！</p>
         </div>
         
-        <button class="btn" onclick="showSurprise()">点击领取祝福</button>
+        <div>
+            <button class="btn" onclick="showSurprise()">点击领取祝福</button>
+            <button class="btn btn-secondary" onclick="customizeName()">个性化祝福</button>
+        </div>
     </div>
     
     <!-- 惊喜弹窗 -->
@@ -377,6 +613,31 @@
     </div>
     
     <script>
+        // 页面加载完成后隐藏加载动画
+        window.onload = function() {
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+                
+                // 延迟显示气球
+                setTimeout(() => {
+                    const balloons = document.querySelectorAll('.balloon');
+                    balloons.forEach((balloon, index) => {
+                        setTimeout(() => {
+                            balloon.style.animation = 'float 6s ease-in-out infinite';
+                            balloon.style.top = '10%';
+                        }, index * 200);
+                    });
+                }, 500);
+                
+                // 从URL获取名字参数
+                const urlParams = new URLSearchParams(window.location.search);
+                const name = urlParams.get('name');
+                if (name) {
+                    document.getElementById('nameDisplay').textContent = name;
+                }
+            }, 1500);
+        };
+        
         // 显示惊喜效果
         function showSurprise() {
             const surprise = document.getElementById('surprise');
@@ -397,7 +658,7 @@
             const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7'];
             const surprise = document.getElementById('surprise');
             
-            for (let i = 0; i < 100; i++) {
+            for (let i = 0; i < 150; i++) {
                 const confetti = document.createElement('div');
                 confetti.classList.add('confetti');
                 confetti.style.left = Math.random() * 100 + '%';
@@ -413,19 +674,27 @@
             }
         }
         
-        // 页面加载时的动画效果
-        window.onload = function() {
-            // 延迟显示气球
-            setTimeout(() => {
-                const balloons = document.querySelectorAll('.balloon');
-                balloons.forEach((balloon, index) => {
-                    setTimeout(() => {
-                        balloon.style.animation = 'float 6s ease-in-out infinite';
-                        balloon.style.top = '10%';
-                    }, index * 200);
-                });
-            }, 1000);
-        };
+        // 个性化祝福
+        function customizeName() {
+            const name = prompt('请输入收祝福人的名字：');
+            if (name) {
+                document.getElementById('nameDisplay').textContent = name;
+                // 更新URL参数，方便分享
+                const url = new URL(window.location.href);
+                url.searchParams.set('name', name);
+                window.history.pushState({}, '', url);
+            }
+        }
+        
+        // 添加触摸反馈效果
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.95)';
+            });
+            btn.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
     </script>
 </body>
 </html>
